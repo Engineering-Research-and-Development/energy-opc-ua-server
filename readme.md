@@ -1,3 +1,14 @@
+# OPC UA ENERGY SERVER with NodeOPCUA
+A simple server that represents an energy station with the follow structure:
+
+* Energy (obj)
+    * ActivePowerL1 (attr)
+    * Flow (attr)
+    * Pressure (attr)
+
+![Energy Schema](https://github.com/Engineering-Research-and-Development/energy-opc-ua-server/blob/master/img/energy_schema.png)
+
+
 ### Install from source
 
     $ git clone "address"
