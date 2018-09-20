@@ -1,0 +1,19 @@
+{
+  "name": "OPC_UA_Energy_Server",
+  "version": "1.0.0",
+  "description": "Energy Server",
+  "main": "energy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Engineering",
+  "license": "ISC",
+  "dependencies": {
+    "csv": "^3.0.2",
+    "csv-parse": "^2.2.0",
+    "node-opcua": "0.0.61",
+    "npm": "^5.8.0",
+    "async": "^2.6.0",
+    "semver": "^5.5.0"
+  }
+}
