@@ -28,8 +28,10 @@ A simple server that represents an energy station with the follow structure:
       $ readTimestamp = false;               -> (If  true) Set an interval, computed from Timestamp column in csv file, to read data
       
 ### Administration Services
-Administration services are reachable at port specified by api-port property (config.json).
+Administration services are reachable at port specified by api_port property (config.json).
 
 |     |    Service    |                          Description                          |
 |-----|:-------------:|:-------------------------------------------------------------:|
 | GET | /version      | Returns information about version, name and server description |
+| GET | /status      | Returns information about server status |
+
