@@ -4,6 +4,7 @@ var parse = require('csv-parse');
 var async = require('async');
 var energyAS = require("./Energy/Energy1/Energy_object");
 var config = require("./config/config");
+var serviceServer = require("./services/server");
 
 
 var data_matrix = null;
@@ -47,23 +48,27 @@ var server = new opcua.OPCUAServer({
 });
 
 function post_initialize() {
-    console.log("initialized");
 
-    async.series([
-        function(callback) {
-          create_datamatrix(callback);
-        },
-        function(callback) {
-            energyAS.construct_my_address_space(server,data_matrix,read_timeout,columnNames,readTimestamp);
-            server.start(function() {
-              console.log("Server is now listening ... ( press CTRL+C to stop)");
-              console.log("port ", server.endpoints[0].port);
-              var endpointUrl = server.endpoints[0].endpointDescriptions()[0].endpointUrl;
-              console.log(" the primary server endpoint url is ", endpointUrl );
-     });
-   }
+  console.log("initialized");
 
- ]);
+  async.series([
+      function(callback) {
+        create_datamatrix(callback);
+      },
+      function(callback) {
+          energyAS.construct_my_address_space(server,data_matrix,read_timeout,columnNames,readTimestamp);
+          server.start(function() {
+            console.log("Server is now listening ... ( press CTRL+C to stop)");
+            console.log("port ", server.endpoints[0].port);
+            var endpointUrl = server.endpoints[0].endpointDescriptions()[0].endpointUrl;
+            console.log(" the primary server endpoint url is ", endpointUrl );
+   });
+   serviceServer.start();
+ }
+
+]);
+
+
 
 
 }
