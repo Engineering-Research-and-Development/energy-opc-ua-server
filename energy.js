@@ -17,7 +17,7 @@ var columnNames = config.columnNames;
 var readTimestamp = config.readTimestamp;
 
 function create_datamatrix(callback) {
-  fs.createReadStream("./data_input/energy.csv")
+  fs.createReadStream("./config/energy.csv")
   .pipe(parse({delimiter: ','}))
   .on('data', function(csvrow) {
     csvData.push(csvrow);
