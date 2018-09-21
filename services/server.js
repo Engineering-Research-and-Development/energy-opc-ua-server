@@ -12,8 +12,8 @@ require('./routes')(app);
 var port = configS.api_port;
 
 // Start server
-server.listen(port, "localhost" , function () {
-  console.log('Express server listening on %s:%d', server.address().address,server.address().port);
+server.listen(port , function () {
+  console.log('Administration services listening on port %d',server.address().port);
 });
 
 process.on('uncaughtException', function(err) {
