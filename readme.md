@@ -33,3 +33,5 @@ Administration services are reachable at port specified by api-port property (co
 |     |    Service    |                          Description                          |
 |-----|:-------------:|:-------------------------------------------------------------:|
 | GET | /version      | Returns information about version, name and server description |
+| GET | /status      | Returns information about server status |
+
